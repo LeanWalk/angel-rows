@@ -91,10 +91,8 @@ const SignInForm = () => {
         <Button 
             buttonType={BUTTON_TYPE_CLASSES.google} 
             type='button' 
-            onClick={signInWithGoogle}
-            >
-            Sign In with Google
-            </Button>
+            onClick={signInWithGoogle}>Google Sign In
+        </Button>
         </ButtonsContainer>
         </form>
         </SigInContainer>
