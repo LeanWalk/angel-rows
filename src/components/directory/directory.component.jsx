@@ -19,33 +19,31 @@ const categories = [
     id: 3,
     title: 'sneakers',
     imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-    route: 'shop/sneaker',
+    route: 'shop/sneakers',
   },
   {
     id: 4,
     title: 'womens',
     imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-    route: 'shop/women',
+    route: 'shop/womens',
   },
   {
     id: 5,
     title: 'mens',
     imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-    route: 'shop/men',
+    route: 'shop/mens',
   },
 ];
 
 const Directory = () => {
    
-    return (
-      <DirectoryContainer>
+  return (
+    <DirectoryContainer>
       {categories.map((category) => (
        <DirectoryItem  key={category.id} category={category} />
-        ))}
-    
-      </DirectoryContainer>
-    )
-
+      ))}
+    </DirectoryContainer>
+  );
 };
 
 export default Directory;
