@@ -24,7 +24,6 @@ const Button = ({ children, buttonType, isloading, ...otherProps }) => {
     return (
     <CustomeButton disabled={isloading} { ...otherProps}>
     {isloading ? <ButtonSpinner /> : children}
-    {children}
     </CustomeButton>
  );
 };

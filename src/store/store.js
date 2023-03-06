@@ -29,7 +29,7 @@ window &&
 window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || 
 compose;
 
-const composedEnhancers = composeEnhancer(applyMiddleware(...middleWares));
+const composedEnhancers = composeEnhancer(applyMiddleware( ...[...middleWares, sagaMiddleware]));
 
 export const store = createStore(
     persistedReducer, 
