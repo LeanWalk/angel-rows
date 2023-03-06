@@ -10,7 +10,7 @@ import { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import { 
     PaymentFormContainer, 
     FormContainer, 
-    PaymentButton
+    PaymentButton,
  } from './payment-form.styles'
 
 const PaymentForm = () => {
@@ -35,7 +35,9 @@ const PaymentForm = () => {
             'Content-Type': 'application/json',
             },
             body: JSON.stringify({ amount: amount * 100 }),
-        }).then((res) => res.json());
+        }).then((res) => {
+        return res.json()
+    });
         
     const clientSecret = response.paymentIntent.client_secret;
 
@@ -63,11 +65,11 @@ const PaymentForm = () => {
     return (
         <PaymentFormContainer>
         <FormContainer onSubmit={paymentHandler}>
-        <h2>Payment Card Details: </h2>
+        <h2>Payment Card Details:</h2>
         <CardElement />
         <PaymentButton
-            isloading={isProcessingPayment}
             buttonType={BUTTON_TYPE_CLASSES.inverted}
+            isloading={isProcessingPayment}
             >
             Pay Now
             </PaymentButton>

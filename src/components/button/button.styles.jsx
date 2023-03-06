@@ -1,11 +1,8 @@
 import styled from "styled-components";
 
-import spinner, { SpinnerContainer } from "../spinner/spinner.styles";
-
-
 export const BaseButton = styled.button`
   min-width: 165px;
-  idth: auto;
+  width: auto;
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
@@ -27,7 +24,6 @@ export const BaseButton = styled.button`
     color: black;
     border: 1px solid black;
 }
-
 `;
 
 export const GoogleSignInButton = styled(BaseButton)`
@@ -53,7 +49,22 @@ export const InvertedButton = styled(BaseButton)`
   }
 `;
 
-export const ButtonSpinner = styled(SpinnerContainer)`
+export const LoadingSpinner = styled.div`
+display: inline-block;
 width: 30px;
 height: 30px;
+border: 3px solid rgba(195, 195, 195, 0.6);
+border-radius: 50%;
+border-top-color: #636767;
+animation: spin 1s ease-in-out infinite;
+@keyframes spin { 
+  to {
+    -webkit-transform: rotate(3600deg);
+  }
+}
+@-webkit-keyframes spin {
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
 `;
